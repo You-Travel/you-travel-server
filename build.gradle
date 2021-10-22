@@ -13,6 +13,9 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework:spring-webmvc:5.3.12'
+	implementation 'org.springframework:spring-context:5.3.12'
+	implementation 'org.springframework:spring-webmvc:5.3.12'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-parent:1.1.8.RELEASE'
 	implementation 'org.springframework:spring-web:5.3.12'
