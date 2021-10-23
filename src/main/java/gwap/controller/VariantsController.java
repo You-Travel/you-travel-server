@@ -39,7 +39,7 @@ public class VariantsController {
             }
     }
 
-    private void addFitVariantsByTrain(Integer countPeople, Integer budget) {
+    private void addFitVariantByAuto(Integer countPeople, Integer budget) {
         Integer price = 5000 * (int) Math.ceil(countPeople / 5);
         if  (price <= 0.25 * budget) {
             variantsService.addVariant(new Variant(
@@ -48,7 +48,7 @@ public class VariantsController {
         }
     }
 
-    private void findFitVariantsByAuto(Integer countPeople, Integer budget) {
+    private void findFitVariantByTrain(Integer countPeople, Integer budget) {
         try {
             DataSource.getTraines();
             //check for the validity of options (if (price * 4 <= budget) {add to variants})
