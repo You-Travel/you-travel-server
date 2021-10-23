@@ -51,8 +51,12 @@ public class VariantsController {
 
     private void findFitVariantByTrain(Integer countPeople, Integer budget) {
         try {
-            DataSource.getTraines();
-            //check for the validity of options (if (price * 4 <= budget) {add to variants})
+            List<Variant> trains = DataSource.getTraines();
+            for (Variant train : trains) {
+                if  (train.getPrice() <= 0.25 * budget) {
+                    variantsService.addVariant(train);
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

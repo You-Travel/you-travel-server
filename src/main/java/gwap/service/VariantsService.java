@@ -18,6 +18,4 @@ public class VariantsService {
         VARIANTS.add(variant);
     }
 
-
-
 }

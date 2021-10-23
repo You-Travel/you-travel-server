@@ -6,6 +6,7 @@ import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataSource {
@@ -33,12 +34,11 @@ public class DataSource {
     }
 
     public static List<Variant> getTraines() throws IOException{
-        Content result = Request
-                .Post("https://suggest.travelpayouts.com/search?service=tutu_trains&term=2000002&term2=2064130&callback=n")
-                .execute().returnContent();
-
-        System.out.println(result.asString());
-        return null;
+        List<Variant> variants = new ArrayList<>();
+        variants.add(new Variant("", 3154, 2520, "bus", ""));
+        variants.add(new Variant("", 3100, 5000, "train-plachcart", ""));
+        variants.add(new Variant("", 3100, 7000, "train-cupe", ""));
+        return variants;
     }
 
     /*public static List<Variant> getAuto() throws IOException{
