@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class Variant {
     @SerializedName("link")
-    String link = "";
+    String link;
     @SerializedName("price")
-    Integer price = 0;
-    Integer time = 140;
-    String category = "airplane";
+    Integer price;
+    Integer time;
+    String category;
     @SerializedName("departure_at")
-    String data = "";
+    String data;
 
     public Variant(String link, Integer price, Integer time, String category, String data) {
 
@@ -20,6 +20,14 @@ public class Variant {
         this.time = time;
         this.category = category;
         this.data = data;
+    }
+
+    public void setTime(Integer time) {
+        this.time = time;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getLink() {
