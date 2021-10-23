@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 
 @Service("fileStorageService")
 public class FileStorageService {
-    private final Path path = Paths.get("./img/");
+    private final Path path = Paths.get("./src/img/");
 
     public void init() {
         try {

@@ -30,6 +30,7 @@ public class VariantsController {
     private void findFitVariants(Integer countPeople, Integer budget) {
          addFitVariantByAirplane(countPeople, budget);
          addFitVariantByAuto(countPeople, budget);
+         findFitVariantByTrain(countPeople, budget);
     }
 
     private void addFitVariantByAirplane(Integer countPeople, Integer budget) {
