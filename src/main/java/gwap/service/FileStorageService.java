@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 
 @Service("fileStorageService")
 public class FileStorageService {
-    private final Path path = Paths.get("D:\\Projects\\hacaton\\you-travel-server\\src\\main\\resources\\img\\");
+    private final Path path = Paths.get("./img/");
 
     public void init() {
         try {

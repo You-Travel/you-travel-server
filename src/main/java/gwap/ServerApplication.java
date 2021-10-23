@@ -20,7 +20,7 @@ public class ServerApplication {
 
 	@RequestMapping(value = "/")
 	public String home() {
-		return "Hello Docker World";
+		return "You.Travel service";
 	}
 
 	public static void main(String[] args) {
