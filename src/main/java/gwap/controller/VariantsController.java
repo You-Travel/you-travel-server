@@ -29,7 +29,7 @@ public class VariantsController {
 
     private void findFitVariants(Integer countPeople, Integer budget) {
          addFitVariantByAirplane(countPeople, budget);
-        // findFitVariantsByAuto(countPeople, budget);
+         addFitVariantByAuto(countPeople, budget);
     }
 
     private void addFitVariantByAirplane(Integer countPeople, Integer budget) {
@@ -40,11 +40,11 @@ public class VariantsController {
     }
 
     private void addFitVariantByAuto(Integer countPeople, Integer budget) {
-        Integer price = 5000 * (int) Math.ceil(countPeople / 5);
+        int price = 5000 * (int) Math.ceil(countPeople / 5.);
         if  (price <= 0.25 * budget) {
             variantsService.addVariant(new Variant(
                     "http://www.naprokat.ru/api/method_name?”params”&access_token=\"access_token\"",
-                    price, 1195, "train", "-"));
+                    price, 1195, "auto", "-"));
         }
     }
 
