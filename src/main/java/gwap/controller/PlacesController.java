@@ -18,14 +18,14 @@ public class PlacesController {
     public List<Place> getPlaces() {
 
         List<Place> places = Arrays.asList(
-                new Place("Baran-Rapan", 4, "₽₽₽₽", Arrays.asList("русская"), null),
-                new Place("Пицца Фишт", 5, "₽₽", Arrays.asList("пицца", "итальянская"), null),
-                new Place("Хмели & Сунели", 2, "₽₽", Arrays.asList("грузинская"), null),
-                new Place("Ред-Буфет", 1, "₽₽₽", Arrays.asList("кафе", "фастфуд"), null),
-                new Place("Мамино", 4, "₽₽", Arrays.asList("бар", "европейская"), null),
-                new Place("KFC", 5, "₽₽₽₽₽", Arrays.asList("фастфуд"), null),
-                new Place("Своя компания", 4, "₽₽", Arrays.asList("грузинская"), null),
-                new Place("Хмели & Сунели", 5, "₽₽₽", Arrays.asList("грузинская"), null)
+                new Place("Baran-Rapan", 4, "₽₽₽₽", Arrays.asList("русская"), "1.jpg"),
+                new Place("Пицца Фишт", 5, "₽₽", Arrays.asList("пицца", "итальянская"), "3.jpg"),
+                new Place("Хмели & Сунели", 2, "₽₽", Arrays.asList("грузинская"), "2.jpg"),
+                new Place("Ред-Буфет", 1, "₽₽₽", Arrays.asList("кафе", "фастфуд"), "4.jpg"),
+                new Place("Мамино", 4, "₽₽", Arrays.asList("бар", "европейская"), "5.jpg"),
+                new Place("KFC", 5, "₽₽₽₽₽", Arrays.asList("фастфуд"), "6.jpg"),
+                new Place("Своя компания", 4, "₽₽", Arrays.asList("грузинская"), "7.jpg"),
+                new Place("Хмели & Сунели", 5, "₽₽₽", Arrays.asList("грузинская"), "8.jpg")
         );
 
         return places;
