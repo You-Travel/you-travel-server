@@ -1,20 +1,29 @@
 package gwap.model;
 
-public class Variant {
-    Integer id;
-    Integer price;
-    Integer time;
-    String category;
 
-    public Variant(Integer id, Integer price, Integer time, String category) {
-        this.id = id;
+import com.google.gson.annotations.SerializedName;
+
+public class Variant {
+    @SerializedName("link")
+    String link = "";
+    @SerializedName("price")
+    Integer price = 0;
+    Integer time = 140;
+    String category = "airplane";
+    @SerializedName("departure_at")
+    String data = "";
+
+    public Variant(String link, Integer price, Integer time, String category, String data) {
+
+        this.link = link;
         this.price = price;
         this.time = time;
         this.category = category;
+        this.data = data;
     }
 
-    public Integer getId() {
-        return id;
+    public String getLink() {
+        return link;
     }
 
     public Integer getPrice() {
@@ -27,5 +36,9 @@ public class Variant {
 
     public String getCategory() {
         return category;
+    }
+
+    public String getData() {
+        return data;
     }
 }

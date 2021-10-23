@@ -36,18 +36,13 @@ public class VariantsController {
     }
 
     private void findFitVariants(Integer countPeople, Integer budget) {
-        findFitVariantsByAirplane(countPeople, budget);
-        findFitVariantsByTrain(countPeople, budget);
-        findFitVariantsByAuto(countPeople, budget);
+         findFitVariantsByAirplane(countPeople, budget);
+        // findFitVariantsByAuto(countPeople, budget);
     }
 
     private void findFitVariantsByAirplane(Integer countPeople, Integer budget) {
-        try {
-            DataSource.getAirplanes();
+            variantsService.addVariant(DataSource.getAirplanes());
             //check for the validity of options (if (price * 4 <= budget) {add to variants})
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void findFitVariantsByTrain(Integer countPeople, Integer budget) {
