@@ -3,7 +3,6 @@ package gwap.controller;
 import gwap.dataSource.DataSource;
 import gwap.model.Variant;
 import gwap.service.VariantsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,21 +28,23 @@ public class VariantsController {
     }
 
     private void findFitVariants(Integer countPeople, Integer budget) {
-         findFitVariantsByAirplane(countPeople, budget);
+         addFitVariantByAirplane(countPeople, budget);
         // findFitVariantsByAuto(countPeople, budget);
     }
 
-    private void findFitVariantsByAirplane(Integer countPeople, Integer budget) {
-            variantsService.addVariant(DataSource.getAirplanes());
-            //check for the validity of options (if (price * 4 <= budget) {add to variants})
+    private void addFitVariantByAirplane(Integer countPeople, Integer budget) {
+            Variant variant = DataSource.getAirplanes();
+            if  (variant.getPrice() * countPeople <= 0.25 * budget) {
+                variantsService.addVariant(variant);
+            }
     }
 
-    private void findFitVariantsByTrain(Integer countPeople, Integer budget) {
-        try {
-            DataSource.getTraines();
-            //check for the validity of options (if (price * 4 <= budget) {add to variants})
-        } catch (IOException e) {
-            e.printStackTrace();
+    private void addFitVariantsByTrain(Integer countPeople, Integer budget) {
+        Integer price = 5000 * (int) Math.ceil(countPeople / 5);
+        if  (price <= 0.25 * budget) {
+            variantsService.addVariant(new Variant(
+                    "http://www.naprokat.ru/api/method_name?”params”&access_token=\"access_token\"",
+                    price, 1195, "train", "-"));
         }
     }
 
