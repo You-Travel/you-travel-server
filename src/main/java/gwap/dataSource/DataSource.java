@@ -19,7 +19,11 @@ public class DataSource {
             jnString = jnString.replace("],\"currency\":\"usd\"}", "");
 
             Gson gson = new Gson();
-            return gson.fromJson(jnString, Variant.class);
+            Variant fitVariant = gson.fromJson(jnString, Variant.class);
+            fitVariant.setTime(140);
+            fitVariant.setCategory("airplane");
+            fitVariant.setPrice(fitVariant.getPrice() * 15);
+            return fitVariant;
 
 
         } catch (IOException e) {
@@ -30,16 +34,18 @@ public class DataSource {
 
     public static List<Variant> getTraines() throws IOException{
         Content result = Request
-                .Post("https://hotels4.p.rapidapi.com/locations/search?query=new%20york&locale=en_US")
+                .Post("https://suggest.travelpayouts.com/search?service=tutu_trains&term=2000002&term2=2064130&callback=n")
                 .execute().returnContent();
+
+        System.out.println(result.asString());
         return null;
     }
 
-    public static List<Variant> getAuto() throws IOException{
+    /*public static List<Variant> getAuto() throws IOException{
         Content result = Request
                 .Post("https://hotels4.p.rapidapi.com/locations/search?query=new%20york&locale=en_US")
                 .execute().returnContent();
         return null;
-    }
+    }*/
 
 }

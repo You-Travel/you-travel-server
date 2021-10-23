@@ -26,6 +26,10 @@ public class Variant {
         this.time = time;
     }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public void setCategory(String category) {
         this.category = category;
     }
