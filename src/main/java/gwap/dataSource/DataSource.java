@@ -8,7 +8,6 @@ import org.apache.http.client.fluent.Request;
 import java.io.IOException;
 import java.util.List;
 
-
 public class DataSource {
     public static Variant getAirplanes()  {
         final Content postResult;

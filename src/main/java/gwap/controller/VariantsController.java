@@ -2,25 +2,18 @@ package gwap.controller;
 
 import gwap.dataSource.DataSource;
 import gwap.model.Variant;
-import gwap.model.VariantsService;
+import gwap.service.VariantsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class VariantsController {
-    private final VariantsService variantsService;
-
-
-    @Autowired
-    public VariantsController(VariantsService variantsService) {
-        this.variantsService = variantsService;
-    }
+    private final VariantsService variantsService = new VariantsService();
 
     @GetMapping(value = "/variants")
     public ResponseEntity<List<Variant>> getFitVariants(

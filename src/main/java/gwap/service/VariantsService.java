@@ -1,5 +1,6 @@
-package gwap.model;
+package gwap.service;
 
+import gwap.model.Variant;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
